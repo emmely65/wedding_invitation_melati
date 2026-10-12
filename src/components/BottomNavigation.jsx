@@ -35,32 +35,16 @@ const NAV_ITEMS = [
     ),
   },
   {
-    id: 'save-date',
-    label: 'Tanggal',
+    id: 'events',
+    label: 'Acara',
+    scrollTargetId: 'save-date',
+    targetIds: ['save-date', 'events'],
     icon: (
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
       />
-    ),
-  },
-  {
-    id: 'events',
-    label: 'Acara',
-    icon: (
-      <>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </>
     ),
   },
   {
@@ -101,14 +85,19 @@ export default function BottomNavigation({ opened }) {
     let maxVisibleHeight = -1;
 
     for (const item of NAV_ITEMS) {
-      const el = document.getElementById(item.id);
-      if (!el) continue;
+      const idsToCheck = item.targetIds || [item.id];
+      let visibleHeight = 0;
 
-      const rect = el.getBoundingClientRect();
-      // Calculate how many vertical pixels of this section are currently visible in the screen viewport
-      const visibleTop = Math.max(0, rect.top);
-      const visibleBottom = Math.min(viewportHeight, rect.bottom);
-      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      for (const tid of idsToCheck) {
+        const el = document.getElementById(tid);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        // Calculate how many vertical pixels of this section are currently visible in the screen viewport
+        const visibleTop = Math.max(0, rect.top);
+        const visibleBottom = Math.min(viewportHeight, rect.bottom);
+        visibleHeight += Math.max(0, visibleBottom - visibleTop);
+      }
 
       if (visibleHeight > maxVisibleHeight) {
         maxVisibleHeight = visibleHeight;
@@ -149,9 +138,9 @@ export default function BottomNavigation({ opened }) {
 
   if (!opened) return null;
 
-  const scrollTo = (e, id) => {
+  const scrollTo = (e, item) => {
     e.preventDefault();
-    setActiveTab(id);
+    setActiveTab(item.id);
 
     // Lock active tab during smooth scroll transition to prevent intermediate flickering
     isManualScrollRef.current = true;
@@ -164,7 +153,7 @@ export default function BottomNavigation({ opened }) {
     const container = document.getElementById('main-scroll-container');
 
     // 1. Home: scroll to absolute top on all contexts
-    if (id === 'home') {
+    if (item.id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
       document.body.scrollTo({ top: 0, behavior: 'smooth' });
@@ -179,7 +168,8 @@ export default function BottomNavigation({ opened }) {
     }
 
     // 2. Other sections: calculate container offset and scroll smoothly
-    const target = document.getElementById(id);
+    const targetId = item.scrollTargetId || item.id;
+    const target = document.getElementById(targetId);
     if (!target) return;
 
     if (container && container.scrollHeight > container.clientHeight) {
@@ -203,8 +193,8 @@ export default function BottomNavigation({ opened }) {
           return (
             <a
               key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => scrollTo(e, item.id)}
+              href={`#${item.scrollTargetId || item.id}`}
+              onClick={(e) => scrollTo(e, item)}
               className={`flex-1 min-w-0 flex flex-col items-center justify-center rounded-full py-1.5 px-0.5 sm:px-1 transition-all duration-200 active:scale-95 select-none ${
                 isActive
                   ? 'bg-[#5C0F1A] text-white shadow-md font-semibold scale-[1.02]'
