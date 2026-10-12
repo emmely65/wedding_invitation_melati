@@ -34,7 +34,6 @@ function EventCard({ event }) {
     .toUpperCase();
   const isCompactTitle =
     event.id === 'ngunduh-mantu' ||
-    event.id === 'sepasar-manten' ||
     displayTitle.length > 11;
 
   return (

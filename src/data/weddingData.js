@@ -104,8 +104,8 @@ export const weddingData = {
       },
     },
     {
-      id: 'sepasar-manten',
-      title: 'Sepasar Manten',
+      id: 'ngunduh-mantu',
+      title: 'Ngunduh Mantu',
       day: 'Senin',
       dayDate: '26 Oktober 2026',
       time: '16.00 WIB s/d selesai',
@@ -114,10 +114,10 @@ export const weddingData = {
       mapsUrl:
         "https://www.google.com/maps/place/7%C2%B000'34.1%22S+111%C2%B047'09.9%22E/@-7.0094697,111.7834948,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.0094697!4d111.7860697?hl=id&entry=ttu&g_ep=EgoyMDI2MDkxNS4wIKXMDSoASAFQAw%3D%3D",
       calendar: {
-        title: 'Sepasar Manten Rihma & Amir',
+        title: 'Ngunduh Mantu Rihma & Amir',
         start: '20261025T230000Z',
         end: '20261026T050000Z',
-        details: 'Acara Sepasar Manten Rihma & Amir',
+        details: 'Acara Ngunduh Mantu Rihma & Amir',
         location: 'Ds. Tunggulrejo RT 12 RW 04, Kec. Singgahan, Kab. Tuban',
       },
     },

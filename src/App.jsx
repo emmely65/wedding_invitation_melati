@@ -150,7 +150,7 @@ export default function App() {
           {/* 4. Simpan Tanggal (Countdown) setelah Mempelai */}
           <SaveTheDateSection data={weddingData} />
 
-          {/* 5. Event Details (Akad Nikah, Resepsi, Sepasar Manten) - Solid Background Coklat Jawa */}
+          {/* 5. Event Details (Akad Nikah, Resepsi, Ngunduh Mantu) - Solid Background Coklat Jawa */}
           <EventDetails
             events={weddingData.events}
             bouquetSrc={weddingData.photos.bouquet}
