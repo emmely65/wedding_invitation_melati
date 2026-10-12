@@ -64,6 +64,17 @@ const NAV_ITEMS = [
     ),
   },
   {
+    id: 'gift',
+    label: 'Gift',
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 8v13m0-13V6a2 2 0 00-2-2H7.5A2.5 2.5 0 005 6.5V8h7zm0 0V6a2 2 0 012-2h2.5A2.5 2.5 0 0119 6.5V8h-7zm-7 4h14M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+      />
+    ),
+  },
+  {
     id: 'rsvp',
     label: 'RSVP',
     icon: (
@@ -186,7 +197,7 @@ export default function BottomNavigation({ opened }) {
       className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom,0.75rem))] left-1/2 -translate-x-1/2 lg:left-[82.5%] z-40 w-[94%] max-w-[420px] pointer-events-auto transition-all duration-300"
       aria-label="Navigasi Menu Utama"
     >
-      <div className="flex items-center justify-between gap-1 w-full rounded-full bg-white/92 px-1.5 py-1.5 shadow-[0_10px_32px_rgba(0,0,0,0.18),0_2px_8px_rgba(201,161,90,0.18)] backdrop-blur-xl border border-[#C9A15A]/40">
+      <div className="flex items-center justify-between gap-0.5 sm:gap-1 w-full rounded-full bg-white/92 px-1 sm:px-1.5 py-1.5 shadow-[0_10px_32px_rgba(0,0,0,0.18),0_2px_8px_rgba(201,161,90,0.18)] backdrop-blur-xl border border-[#C9A15A]/40">
         {NAV_ITEMS.map((item) => {
           const isActive = activeTab === item.id;
           return (
@@ -194,7 +205,7 @@ export default function BottomNavigation({ opened }) {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => scrollTo(e, item.id)}
-              className={`flex-1 min-w-0 flex flex-col items-center justify-center rounded-full py-1.5 px-1 transition-all duration-200 active:scale-95 select-none ${
+              className={`flex-1 min-w-0 flex flex-col items-center justify-center rounded-full py-1.5 px-0.5 sm:px-1 transition-all duration-200 active:scale-95 select-none ${
                 isActive
                   ? 'bg-[#5C0F1A] text-white shadow-md font-semibold scale-[1.02]'
                   : 'text-[#5C0F1A]/70 hover:text-[#5C0F1A] hover:bg-[#5C0F1A]/5'

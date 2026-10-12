@@ -1,8 +1,8 @@
 import Reveal from './Reveal.jsx';
 
 export default function ClosingSection({ data }) {
-  const brideShort = data?.brideShort || 'Alfiya';
-  const groomShort = data?.groomShort || 'Affandi';
+  const brideShort = data?.brideShort || 'Rihma';
+  const groomShort = data?.groomShort || 'Amir';
   const coupleText = `${brideShort} & ${groomShort}`;
 
   // WhatsApp & Instagram contacts
@@ -56,24 +56,24 @@ export default function ClosingSection({ data }) {
             <p className="font-serifDisplay text-[13px] sm:text-[14px] font-semibold text-[#4A3D38] tracking-wide mt-6 sm:mt-7">
               Kami Yang Berbahagia
             </p>
-            <h3 className="font-greatVibes text-[38px] sm:text-[46px] text-[#5C0F1A] leading-tight select-none font-normal mt-1.5 sm:mt-2">
+            <h3 className="font-greatVibes text-[38px] sm:text-[46px] text-[#7A4B26] leading-tight select-none font-normal mt-1.5 sm:mt-2">
               {coupleText}
             </h3>
           </Reveal>
         </div>
 
-        {/* ─── ORNAMEN asset-general-motion-v1-min (Menutupi bawah teks) ─── */}
+        {/* ─── ORNAMEN BUNGA BAWAH (bunga-bawah.png) ─── */}
         <div className="relative w-full mt-4 sm:mt-6 pointer-events-none select-none z-10">
           <img
-            src="/images/asset-general-motion-v1-min.png"
+            src="/images/bunga-bawah.png"
             alt="Rangkaian Bunga Penutup"
-            className="w-full h-auto min-h-[120px] max-h-[200px] object-cover object-top drop-shadow-md"
+            className="w-full h-auto object-contain object-bottom drop-shadow-md mx-auto"
           />
         </div>
       </div>
 
-      {/* ─── 2. FOOTER BAR WARNA MERAH MAROON GELAP SESUAI GAMBAR ─── */}
-      <footer className="w-full bg-[#38040A] text-white pt-6 pb-20 sm:pb-12 px-5 text-center flex flex-col items-center">
+      {/* ─── 2. FOOTER BAR WARNA COKLAT GELAP ELEGAN ─── */}
+      <footer className="w-full bg-[#3D1F0E] text-white pt-6 pb-20 sm:pb-12 px-5 text-center flex flex-col items-center">
         {/* Social Media Icons (Instagram, WhatsApp) */}
         <div className="flex items-center justify-center gap-5 mt-4">
           {/* Instagram */}

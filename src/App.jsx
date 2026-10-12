@@ -6,7 +6,7 @@ import QuoteSection from './components/QuoteSection.jsx';
 import SaveTheDateSection from './components/SaveTheDateSection.jsx';
 import CoupleProfile from './components/CoupleProfile.jsx';
 import EventDetails from './components/EventDetails.jsx';
-import AdabWalimah from './components/AdabWalimah.jsx';
+import WeddingGift from './components/WeddingGift.jsx';
 import DoaPengantin from './components/DoaPengantin.jsx';
 import RSVPForm from './components/RSVPForm.jsx';
 import ClosingSection from './components/ClosingSection.jsx';
@@ -28,7 +28,7 @@ function MotionBackground({ opened }) {
     <div className="fixed inset-y-0 right-0 w-full lg:w-[35%] z-0 pointer-events-none overflow-hidden">
       <video
         ref={videoRef}
-        src="/general-maroon.mp4"
+        src="/bgjawa.mp4"
         autoPlay
         loop
         muted
@@ -36,7 +36,7 @@ function MotionBackground({ opened }) {
         preload="auto"
         className="h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-maroon/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/25 pointer-events-none" />
     </div>
   );
 }
@@ -78,16 +78,32 @@ export default function App() {
     if (!opened) {
       document.documentElement.classList.add('cover-locked');
       document.body.classList.add('cover-locked');
+    } else {
+      document.documentElement.classList.remove('cover-locked');
+      document.body.classList.remove('cover-locked');
     }
+    return () => {
+      document.documentElement.classList.remove('cover-locked');
+      document.body.classList.remove('cover-locked');
+    };
   }, [opened]);
 
   return (
     <div className="flex min-h-screen w-full bg-softPink font-sansBody text-ink antialiased overflow-hidden">
       
       {/* LEFT COLUMN - DESKTOP ONLY */}
-      <div className="hidden lg:flex lg:w-[65%] h-full relative items-center justify-center border-r-8 border-maroon/10 shadow-2xl">
-         <img src={weddingData.photos.cover} className="absolute inset-0 w-full h-full object-cover opacity-90" alt="Background" />
-         <div className="absolute inset-0 bg-gradient-to-b from-maroon/10 to-transparent"></div>
+      <div className="hidden lg:flex lg:w-[65%] h-full relative items-center justify-center border-r-8 border-maroon/10 shadow-2xl overflow-hidden">
+        <div
+          className="absolute inset-y-0 h-full"
+          style={{
+            left: '-1cm',
+            width: 'calc(100% + 2cm)',
+            transform: 'translateX(0.5cm)',
+          }}
+        >
+          <img src={weddingData.photos.cover} className="h-full w-full object-cover object-top opacity-90" alt="Background" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-maroon/10 to-transparent"></div>
          <div className="relative z-10 text-center animate-fadeInDown drop-shadow-lg">
             <p className="mb-2 font-pinyon text-4xl text-maroon italic leading-tight">{weddingData.coverTitle}</p>
             <h1 className="font-pinyon text-7xl font-normal text-maroon my-1 leading-none">{weddingData.brideShort}</h1>
@@ -101,9 +117,9 @@ export default function App() {
       </div>
 
       {/* RIGHT COLUMN - MAIN CONTAINER */}
-      <div className={`w-full lg:w-[35%] h-full relative bg-maroon shadow-2xl overflow-x-hidden scroll-smooth ${opened ? 'overflow-y-auto' : 'overflow-hidden'}`} id="main-scroll-container">
+      <div className={`w-full lg:w-[35%] h-full relative bg-[#4A2610] shadow-2xl overflow-x-hidden scroll-smooth ${opened ? 'overflow-y-auto' : 'overflow-hidden'}`} id="main-scroll-container">
         
-        {/* Background video general-maroon.mp4 untuk semua seksi selain Home */}
+        {/* Background video bgjawa.mp4 untuk semua seksi selain Home */}
         <MotionBackground opened={opened} />
 
         {!coverDismissed && (
@@ -134,22 +150,25 @@ export default function App() {
           {/* 4. Simpan Tanggal (Countdown) setelah Mempelai */}
           <SaveTheDateSection data={weddingData} />
 
-          {/* 5. Event Details (Akad, Resepsi, Ngunduh Mantu) */}
+          {/* 5. Event Details (Akad Nikah, Resepsi, Sepasar Manten) - Solid Background Coklat Jawa */}
           <EventDetails
             events={weddingData.events}
             bouquetSrc={weddingData.photos.bouquet}
           />
 
-          {/* 8. Adab Walimah */}
-          <AdabWalimah data={weddingData} />
+          {/* 6. Group Wedding Gift sampai RSVP */}
+          <div className="relative z-10 w-full">
+            {/* Wedding Gift */}
+            <WeddingGift data={weddingData} />
 
-          {/* 9. Doa Untuk Pengantin */}
-          <DoaPengantin doa={weddingData.doa} />
+            {/* Doa Untuk Pengantin */}
+            <DoaPengantin doa={weddingData.doa} />
 
-          {/* 11. RSVP & Wishes (includes Guestbook) */}
-          <RSVPForm guestName={guestName} />
+            {/* RSVP & Wishes (includes Guestbook) */}
+            <RSVPForm guestName={guestName} />
+          </div>
 
-          {/* 13. Closing */}
+          {/* 6. Closing */}
           <ClosingSection data={weddingData} />
         </main>
 

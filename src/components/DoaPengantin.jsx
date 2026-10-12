@@ -4,15 +4,15 @@ export default function DoaPengantin({ doa }) {
   return (
     <section
       id="doa"
-      style={{ backgroundColor: 'rgba(92, 15, 26, 0.9)' }}
-      className="relative z-10 w-full px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center overflow-hidden border-b border-white/15"
+      style={{ backgroundColor: 'rgba(104, 59, 26, 0.75)' }}
+      className="relative z-10 w-full px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center overflow-hidden border-b border-[#7A4B26]/30 backdrop-blur-sm"
     >
       <div className="w-full max-w-md flex flex-col items-center">
         <Reveal>
-          {/* Box Merah Maron Menyala, Tengah Putih Cream Transparan Tanpa Blur */}
+          {/* Box Coklat Jawa Elegan, Tengah Putih Cream Transparan */}
           <div
-            style={{ backgroundColor: 'rgba(255, 248, 243, 0.85)' }}
-            className="relative w-full max-w-[340px] sm:max-w-[370px] rounded-[24px] sm:rounded-[28px] border-2 sm:border-[2.5px] border-[#8B0014] shadow-[0_0_24px_rgba(163,14,34,0.4),0_12px_35px_rgba(0,0,0,0.35)] px-5 py-6 sm:px-6 sm:py-7 text-center mx-auto transition duration-300 flex flex-col items-center"
+            style={{ backgroundColor: 'rgba(255, 248, 243, 0.88)' }}
+            className="relative w-full max-w-[340px] sm:max-w-[370px] rounded-[24px] sm:rounded-[28px] border-2 sm:border-[2.5px] border-[#7A4B26] shadow-[0_12px_35px_rgba(0,0,0,0.25)] px-5 py-6 sm:px-6 sm:py-7 text-center mx-auto transition duration-300 flex flex-col items-center"
           >
             {/* Judul Cursive Doa Untuk Pengantin */}
             <h3 className="font-greatVibes text-[34px] sm:text-[40px] text-[#241C1A] leading-tight select-none font-normal">
@@ -31,7 +31,7 @@ export default function DoaPengantin({ doa }) {
             </p>
 
             {/* Transliterasi Latin */}
-            <p className="font-serifDisplay italic text-xs sm:text-[13.5px] text-[#5C0F1A] font-semibold leading-relaxed mt-1">
+            <p className="font-serifDisplay italic text-xs sm:text-[13.5px] text-[#7A4B26] font-semibold leading-relaxed mt-1">
               {doa.transliteration}
             </p>
 

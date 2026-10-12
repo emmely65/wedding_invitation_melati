@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Allura&family=Tangerine:wght@400;700&family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400&family=Elsie&family=Pinyon+Script&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Chakra+Petch:ital,wght@0,600;0,700;1,600;1,700&family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400&family=Elsie&family=Great+Vibes&family=Oxanium:wght@600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -96,6 +96,36 @@ img {
   animation: leafPartRight 500ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+@keyframes coverPartLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.9;
+  }
+}
+
+@keyframes coverPartRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.9;
+  }
+}
+
+.animate-coverPartLeft {
+  animation: coverPartLeft 520ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-coverPartRight {
+  animation: coverPartRight 520ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
 /* ─── Scroll indicator bounce ─── */
 @keyframes scrollBounce {
   0%, 100% { transform: translateY(0); opacity: 0.7; }
@@ -174,6 +204,15 @@ img {
 
 .attendance-radio input[type="radio"]:checked + label {
   @apply border-gold bg-gold/15 text-goldDark;
+}
+
+/* ─── Cover Picture Font 3D Chromatic Aberration ─── */
+.text-cover-picture {
+  text-shadow:
+    -1.5px -0.5px 0px rgba(255, 65, 0, 0.85),
+    1.5px 0.5px 0px rgba(0, 180, 255, 0.85),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
 }
 
 /* ─── Reduced motion ─── */

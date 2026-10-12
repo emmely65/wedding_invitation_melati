@@ -26,8 +26,8 @@ export default function HeroSection({ data, opened }) {
     };
 
     const handleTimeUpdate = () => {
-      // Teks muncul di detik 7 s/d 8 video (sekitar 7.4s saat bingkai oval selesai terbentuk sempurna)
-      if (video.currentTime >= 7.4) {
+      // Teks muncul tepat di detik 10 dari video background
+      if (video.currentTime >= 10.0) {
         setShowContent(true);
       }
     };
@@ -53,8 +53,8 @@ export default function HeroSection({ data, opened }) {
       video.addEventListener('loadedmetadata', startPlaybackFromBeginning, { once: true });
     }
 
-    // Fallback timer jika browser throttle timeupdate (7.5 detik)
-    const timer = setTimeout(() => setShowContent(true), 7500);
+    // Fallback timer jika browser throttle timeupdate (10.5 detik)
+    const timer = setTimeout(() => setShowContent(true), 10500);
 
     return () => {
       clearTimeout(timer);
@@ -86,83 +86,56 @@ export default function HeroSection({ data, opened }) {
           />
         </div>
 
-        {/* Content over background - sesuai contoh gambar */}
-        <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 pb-16 sm:pb-20 text-center">
-          {/* The Wedding Of */}
+        {/* Content over background - dinaikkan tambahan 0.7cm (-translate-y-[74px] sm:-translate-y-[82px]) */}
+        <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-6 -translate-y-[74px] sm:-translate-y-[82px] text-center select-none">
+          {/* 1. The Wedding Of */}
           <p
-            className={`font-pinyon text-3xl sm:text-4xl italic text-stone-800 leading-tight transition-all duration-700 ${
+            className={`font-sansBody text-xs sm:text-sm font-semibold tracking-[0.28em] uppercase text-[#FAF6EE]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] mb-2.5 sm:mb-3 transition-all duration-700 ${
               showContent ? 'animate-zoomIn stagger-1' : 'opacity-0'
             }`}
           >
-            The Wedding Of
+            {data.coverTitle || 'The Wedding Of'}
           </p>
 
-          {/* Bride Name (ALFIYA) */}
+          {/* 2. Bride Name (Rihma) */}
           <h2
-            className={`mt-1.5 sm:mt-2 font-serifDisplay text-[42px] sm:text-5xl font-bold uppercase tracking-[0.1em] text-maroon leading-none drop-shadow-sm transition-all duration-700 ${
+            className={`my-1 sm:my-1.5 font-aston text-5xl sm:text-6xl font-normal tracking-wide text-[#FAF6EE] leading-relaxed drop-shadow-[0_3px_14px_rgba(0,0,0,0.75)] transition-all duration-700 ${
               showContent ? 'animate-zoomIn stagger-2' : 'opacity-0'
             }`}
           >
             {data.brideShort}
           </h2>
 
-          {/* Floral Ampersand Image */}
+          {/* 3. Floral Ampersand Image (buanga-v2-transparent.png) */}
           <div
-            className={`my-1 sm:my-1.5 transition-all duration-700 ${
+            className={`my-3 sm:my-4 transition-all duration-700 ${
               showContent ? 'animate-zoomIn stagger-3' : 'opacity-0'
             }`}
           >
             <img
-              src="/images/asset-general-motion-v1-2-min.png"
+              src="/images/buanga-v2-transparent.png"
               alt="&"
-              className="mx-auto h-16 sm:h-20 w-auto object-contain drop-shadow-sm"
+              className="mx-auto h-20 sm:h-24 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]"
             />
           </div>
 
-          {/* Groom Name (AFFANDI) */}
+          {/* 4. Groom Name (Amir) */}
           <h2
-            className={`font-serifDisplay text-[42px] sm:text-5xl font-bold uppercase tracking-[0.1em] text-maroon leading-none drop-shadow-sm transition-all duration-700 ${
+            className={`my-1 sm:my-1.5 font-aston text-5xl sm:text-6xl font-normal tracking-wide text-[#FAF6EE] leading-relaxed drop-shadow-[0_3px_14px_rgba(0,0,0,0.75)] transition-all duration-700 ${
               showContent ? 'animate-zoomIn stagger-4' : 'opacity-0'
             }`}
           >
             {data.groomShort}
           </h2>
 
-          {/* Date */}
+          {/* 5. Date */}
           <p
-            className={`mt-4 sm:mt-5 font-serifDisplay text-base sm:text-lg font-semibold tracking-[0.26em] text-stone-800 leading-none transition-all duration-700 ${
+            className={`mt-6 sm:mt-8 font-serifDisplay text-base sm:text-lg font-medium tracking-[0.28em] text-[#FAF6EE]/95 leading-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] transition-all duration-700 ${
               showContent ? 'animate-zoomIn stagger-5' : 'opacity-0'
             }`}
           >
             {data.coverDate}
           </p>
-
-          {/* Capsule Scroll Down Indicator */}
-          <div
-            className={`mt-4 sm:mt-5 flex justify-center transition-all duration-700 ${
-              showContent ? 'animate-zoomIn stagger-6' : 'opacity-0'
-            }`}
-          >
-            <a
-              href="#quote"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="scroll-indicator flex h-10 w-6 sm:h-11 sm:w-7 items-center justify-center rounded-full border-[1.8px] border-stone-700/80 text-stone-700 transition hover:border-maroon hover:text-maroon"
-              aria-label="Scroll ke seksi Quote"
-            >
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.8}
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0l-4-4m4 4l4-4" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>

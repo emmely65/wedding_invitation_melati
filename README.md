@@ -1,6 +1,6 @@
-# wedding-invitation-AL-AF
+# wedding_invitation_melati
 
-Website Undangan Pernikahan Digital (Affandi & Alfiya) berbasis React, Vite, dan Tailwind CSS dengan integrasi Google Sheets API untuk RSVP.
+Website Undangan Pernikahan Digital (Rihma & Amir) berbasis React, Vite, dan Tailwind CSS dengan integrasi Google Sheets API untuk RSVP.
 
 ## Fitur Utama
 

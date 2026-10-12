@@ -127,12 +127,12 @@ export default function RSVPForm({ guestName }) {
   return (
     <section
       id="rsvp"
-      style={{ backgroundColor: 'rgba(253, 246, 238, 0.75)' }}
-      className="relative z-10 w-full px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center overflow-hidden border-b border-black/10"
+      style={{ backgroundColor: 'rgba(104, 59, 26, 0.75)' }}
+      className="relative z-10 w-full px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center overflow-hidden border-b border-[#7A4B26]/30 backdrop-blur-sm"
     >
       {/* Ornamen Kanan Atas (Tangkai di kanan) */}
       <img
-        src="/images/asset-general-motion-v1-3-min.png"
+        src="/images/bunga1.png"
         alt=""
         aria-hidden="true"
         style={{ transform: 'scaleX(-1)' }}
@@ -141,7 +141,7 @@ export default function RSVPForm({ guestName }) {
 
       {/* Ornamen Kiri (Tangkai di kiri) */}
       <img
-        src="/images/asset-general-motion-v1-3-min.png"
+        src="/images/bunga1.png"
         alt=""
         aria-hidden="true"
         className="absolute top-[24%] sm:top-[26%] -left-5 sm:-left-7 w-28 sm:w-36 pointer-events-none select-none z-0 object-contain drop-shadow-md"
@@ -151,10 +151,10 @@ export default function RSVPForm({ guestName }) {
         {/* Judul: Wishes */}
         <Reveal>
           <div className="text-center">
-            <h2 className="font-greatVibes text-[44px] sm:text-[52px] text-[#241C1A] leading-tight select-none font-normal">
+            <h2 className="font-greatVibes text-[44px] sm:text-[52px] text-white leading-tight select-none font-normal drop-shadow-md">
               Wishes
             </h2>
-            <p className="font-serifDisplay text-xs sm:text-[13px] text-[#554641] tracking-wide mt-1">
+            <p className="font-serifDisplay text-xs sm:text-[13px] text-white/90 tracking-wide mt-1">
               Berikan doa dan ucapan terbaik untuk kami.
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function RSVPForm({ guestName }) {
             <input
               id="rsvp-name"
               type="text"
-              className="w-full rounded-lg sm:rounded-xl border border-[#8C7A75]/35 bg-white px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-serifDisplay text-[#241C1A] placeholder:text-[#A89A94] shadow-sm focus:border-[#5C0F1A] focus:outline-none focus:ring-1 focus:ring-[#5C0F1A]/20 transition"
+              className="w-full rounded-lg sm:rounded-xl border border-[#8C7A75]/35 bg-white px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-serifDisplay text-[#241C1A] placeholder:text-[#A89A94] shadow-sm focus:border-[#7A4B26] focus:outline-none focus:ring-1 focus:ring-[#7A4B26]/20 transition"
               placeholder="Nama"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -177,7 +177,7 @@ export default function RSVPForm({ guestName }) {
             {/* Textarea Ucapan */}
             <textarea
               id="rsvp-message"
-              className="w-full mt-2.5 sm:mt-3 rounded-lg sm:rounded-xl border border-[#8C7A75]/35 bg-white px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-serifDisplay text-[#241C1A] placeholder:text-[#A89A94] shadow-sm min-h-[85px] sm:min-h-[95px] resize-none focus:border-[#5C0F1A] focus:outline-none focus:ring-1 focus:ring-[#5C0F1A]/20 transition"
+              className="w-full mt-2.5 sm:mt-3 rounded-lg sm:rounded-xl border border-[#8C7A75]/35 bg-white px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-serifDisplay text-[#241C1A] placeholder:text-[#A89A94] shadow-sm min-h-[85px] sm:min-h-[95px] resize-none focus:border-[#7A4B26] focus:outline-none focus:ring-1 focus:ring-[#7A4B26]/20 transition"
               placeholder="Ucapan"
               rows={3}
               value={message}
@@ -191,8 +191,8 @@ export default function RSVPForm({ guestName }) {
                 <div className="w-full border-t border-[#8C7A75]/35" />
               </div>
               <span
-                className="relative px-3 text-xs sm:text-[13px] font-serifDisplay font-semibold text-[#443834] tracking-wide"
-                style={{ backgroundColor: 'rgba(253, 246, 238, 0.85)' }}
+                className="relative px-3 text-xs sm:text-[13px] font-serifDisplay font-semibold text-[#443834] tracking-wide rounded-full"
+                style={{ backgroundColor: 'rgba(255, 248, 243, 0.9)' }}
               >
                 Konfirmasi Kehadiran
               </span>
@@ -206,8 +206,8 @@ export default function RSVPForm({ guestName }) {
                 onClick={() => setAttendance('present')}
                 className={`flex items-center justify-center gap-1 rounded-full py-2 sm:py-2.5 px-1.5 sm:px-2.5 border transition duration-200 shadow-sm ${
                   attendance === 'present'
-                    ? 'border-[#5C0F1A] bg-[#5C0F1A] text-white font-semibold'
-                    : 'border-[#5C0F1A]/70 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
+                    ? 'border-[#7A4B26] bg-[#7A4B26] text-white font-semibold'
+                    : 'border-[#7A4B26]/60 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
                 }`}
               >
                 <svg
@@ -232,8 +232,8 @@ export default function RSVPForm({ guestName }) {
                 onClick={() => setAttendance('notsure')}
                 className={`flex items-center justify-center gap-1 rounded-full py-2 sm:py-2.5 px-1.5 sm:px-2.5 border transition duration-200 shadow-sm ${
                   attendance === 'notsure'
-                    ? 'border-[#5C0F1A] bg-[#5C0F1A] text-white font-semibold'
-                    : 'border-[#5C0F1A]/70 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
+                    ? 'border-[#7A4B26] bg-[#7A4B26] text-white font-semibold'
+                    : 'border-[#7A4B26]/60 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
                 }`}
               >
                 <svg
@@ -258,8 +258,8 @@ export default function RSVPForm({ guestName }) {
                 onClick={() => setAttendance('notpresent')}
                 className={`flex items-center justify-center gap-1 rounded-full py-2 sm:py-2.5 px-1.5 sm:px-2.5 border transition duration-200 shadow-sm ${
                   attendance === 'notpresent'
-                    ? 'border-[#5C0F1A] bg-[#5C0F1A] text-white font-semibold'
-                    : 'border-[#5C0F1A]/70 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
+                    ? 'border-[#7A4B26] bg-[#7A4B26] text-white font-semibold'
+                    : 'border-[#7A4B26]/60 bg-[#F8EFEA]/80 text-[#241C1A] hover:bg-[#F8EFEA]'
                 }`}
               >
                 <svg
@@ -283,7 +283,7 @@ export default function RSVPForm({ guestName }) {
             <button
               type="submit"
               disabled={loading}
-              className="mt-3.5 w-full rounded-full bg-[#540912] hover:bg-[#680C17] active:scale-[0.98] py-2.5 sm:py-3 text-center text-xs sm:text-sm font-bold font-serifDisplay text-white tracking-wider shadow-md transition duration-200 disabled:opacity-60"
+              className="mt-3.5 w-full rounded-full bg-[#7A4B26] hover:bg-[#633B1D] active:scale-[0.98] py-2.5 sm:py-3 text-center text-xs sm:text-sm font-bold font-serifDisplay text-white tracking-wider shadow-md transition duration-200 disabled:opacity-60"
             >
               {loading
                 ? 'Mengirim...'
@@ -306,7 +306,7 @@ export default function RSVPForm({ guestName }) {
                 className="w-full rounded-xl sm:rounded-2xl bg-white/95 border border-[#8C7A75]/15 p-3.5 sm:p-4 text-left shadow-[0_2px_10px_rgba(0,0,0,0.05)] transition hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
-                  <h4 className="font-serifDisplay font-bold text-xs sm:text-sm text-[#5C0F1A] leading-none">
+                  <h4 className="font-serifDisplay font-bold text-xs sm:text-sm text-[#7A4B26] leading-none">
                     {wish.name}
                   </h4>
                   {wish.attendance === 'present' && (
