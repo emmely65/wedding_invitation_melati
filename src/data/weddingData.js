@@ -93,8 +93,7 @@ export const weddingData = {
       time: '09.00 WIB s/d selesai',
       place: 'Kediaman Mempelai Pria',
       address: 'Jl. HOS Cokroaminoto No. 1\nPacul, Bojonegoro',
-      mapsUrl:
-        'https://www.google.com/maps/place/Warkop+Cordova+%2F+Cod+Kopi/@-7.1705332,111.8678885,17z/data=!4m6!3m5!1s0x2e77813ae79e9b55:0x2f0e4a947ad7895!8m2!3d-7.1705348!4d111.8678808!16s%2Fg%2F11pb19pxyp?hl=id&entry=ttu&g_ep=EgoyMDI2MDkxNS4wIKXMDSoASAFQAw%3D%3D',
+      mapsUrl: 'https://maps.app.goo.gl/r4NK6Uw86Vw5D2u37',
       calendar: {
         title: 'Resepsi Rihma & Amir',
         start: '20261025T020000Z',
