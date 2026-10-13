@@ -113,7 +113,9 @@ export default function CoupleProfile({ data }) {
             {/* Keterangan Putri, Nama Orang Tua & Alamat */}
             <div className="mt-1 sm:mt-1.5 font-serifDisplay text-[13px] sm:text-[14px] text-[#241F1C] leading-snug text-center">
               <p className="font-medium text-[#4A3B32]">Putri dari</p>
-              <p className="font-semibold text-[#1F1A1C] mt-0.5">Bapak Maftuchin dan Ibu Siti Zulaikah</p>
+              <p className="font-semibold text-[#1F1A1C] mt-0.5">
+                {bride.parents ? bride.parents.replace(/^Putri dari /i, '') : 'Bapak Maftuchin dan Ibu Siti Zulaikah'}
+              </p>
               <p className="text-[12px] sm:text-[12.5px] text-[#4A3B32]/90 mt-0.5 max-w-[285px] sm:max-w-[315px] mx-auto leading-tight">
                 {bride.address || 'Ds.Tunggulrejo kec.Singgahan Kab.Tuban, Rt 12 Rw 04.'}
               </p>
@@ -181,7 +183,9 @@ export default function CoupleProfile({ data }) {
             {/* Keterangan Putra, Nama Orang Tua & Alamat */}
             <div className="mt-1 sm:mt-1.5 font-serifDisplay text-[13px] sm:text-[14px] text-[#241F1C] leading-snug text-center">
               <p className="font-medium text-[#4A3B32]">Putra dari</p>
-              <p className="font-semibold text-[#1F1A1C] mt-0.5">Bapak Drs. A. Abdul Kholiq dan Ibu Sri Hartini, BA</p>
+              <p className="font-semibold text-[#1F1A1C] mt-0.5">
+                {groom.parents ? groom.parents.replace(/^Putra dari /i, '') : 'Bapak Drs. A. Kholiq dan Ibu Sri Hartini, BA'}
+              </p>
               <p className="text-[12px] sm:text-[12.5px] text-[#4A3B32]/90 mt-0.5 max-w-[285px] sm:max-w-[315px] mx-auto leading-tight">
                 {groom.address || 'Jl. HOS Cokroaminoto no 1 pacul Bojonegoro'}
               </p>

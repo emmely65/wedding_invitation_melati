@@ -60,7 +60,7 @@ export const weddingData = {
       name: 'Amir',
       fullName: 'Amirul Mukminin, S. Pd.',
       role: 'Mempelai Pria',
-      parents: 'Putra dari Bapak Drs. A. Abdul Kholiq dan Ibu Sri Hartini, BA',
+      parents: 'Putra dari Bapak Drs. A. Kholiq dan Ibu Sri Hartini, BA',
       address: 'Jl. HOS Cokroaminoto No. 1 Pacul, Bojonegoro',
       instagram: '',
     },
@@ -144,7 +144,7 @@ Pada saat itu, saya yang masih bekerja di luar kota merasa sering capek dan pega
         id: 3,
         badge: 'Oktober 2024',
         title: 'Perjalanan & Menyatukan Rasa',
-        text: `Namun perjalanan pun tak mudah, di tengah perkenalan rupanya sang adik masih bimbang dengan perasaannya dan saya pun pernah ditolak langsung 3 kali setelah sempat menyarakan perasaan saya, namun pada akhirnya di bulan Oktober 2024 ia pun menyatakan memiliki rasa sayang yang sama kepada saya.`,
+        text: `Namun perjalanan pun tak mudah, di tengah perkenalan rupanya sang adik masih bimbang dengan perasaannya dan saya pun pernah ditolak langsung 3 kali setelah sempat menyatakan perasaan saya, namun pada akhirnya di bulan Oktober 2024 ia pun menyatakan memiliki rasa sayang yang sama kepada saya.`,
       },
       {
         id: 4,
