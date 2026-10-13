@@ -42,7 +42,7 @@ function AnimatedBlock({ children, className = '', delay = 0 }) {
 export default function CoupleProfile({ data }) {
   const bride = data?.couple?.bride || {};
   const groom = data?.couple?.groom || {};
-  const bridePhoto = bride.photo || data?.photos?.bride || '/images/cewe.jpg';
+  const bridePhoto = bride.photo || data?.photos?.bride || '/images/mempelai-wanita.jpeg';
   const groomPhoto = groom.photo || data?.photos?.groom || '/images/cowok.jpg';
 
   return (
@@ -93,7 +93,7 @@ export default function CoupleProfile({ data }) {
                   <img
                     src={bridePhoto}
                     alt={bride.name || 'Mempelai Wanita'}
-                    className="w-full h-full object-cover object-[center_28%]"
+                    className="w-full h-full object-cover object-[center_20%]"
                     loading="lazy"
                   />
                 </div>

@@ -20,7 +20,7 @@ export const weddingData = {
   photos: {
     cover: '/images/cover-rihma-amir.jpg',
     bouquet: 'https://hi.inviee.id/wp-content/uploads/2025/10/ISLAMIC-01-Bouquet.webp',
-    bride: '/images/cewe.jpg',
+    bride: '/images/mempelai-wanita.jpeg',
     groom: '/images/cowok.jpg',
     date: '/images/date-rihma-amir.jpg',
     quote: '/images/quote-rihma-amir.jpg',
