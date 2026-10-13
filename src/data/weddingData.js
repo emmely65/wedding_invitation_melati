@@ -122,23 +122,38 @@ export const weddingData = {
     },
   ],
 
-  loveStory: [
-    {
-      title: 'Perkenalan',
-      date: '15 Februari 2020',
-      text: 'Kami bertemu ditempat kerja. Pada saat itu, aku adalah karyawan yang ada ditempat magang dia. Akhirnya aku beranikan diri untuk menyatakan cinta padanya. Dari situlah hubungan kami dimulai.',
-    },
-    {
-      title: 'Lamaran',
-      date: '13 September 2025',
-      text: 'Setelah begitu banyak melewati banyak proses dan rintangan dalam hubungan, akhirnya aku memutuskan untuk melamar dia. Kami pun tidak menyangka bahwa cerita pertemuan ini menjadi penuh makna.',
-    },
-    {
-      title: 'Pernikahan',
-      date: '25 Oktober 2026',
-      text: 'Kami melangsungkan akad nikah & resepsi dengan sederhana dan penuh hikmat. Dengan semua doa restu dari keluarga dan teman-teman, kami telah siap untuk menempuh hidup bersama dan menjalankan ibadah paling indah ini.',
-    },
-  ],
+  loveStory: {
+    title: 'Our Love Story',
+    subtitle: 'Kisah Perjalanan Cinta Kami',
+    stories: [
+      {
+        id: 1,
+        badge: 'Pertemuan Tak Terduga',
+        title: 'Awal Pertemuan & Salad Buah',
+        text: `Pertemuan kami diawali dengan ketidaksengajaan yang justru membuat kami saling mengenal satu sama lain.
+
+Pada saat itu, saya yang masih bekerja di luar kota merasa sering capek dan pegal serta kurang asupan nutrisi dari buah-buahan, teringat salah satu teman saya memiliki kakak yang menjual salad buah, saya berinisiatif untuk memesan salad buah dari beliau, niat hati ingin membeli buah untuk kesehatan yang didapat justru yang membuat dan mengingatkan saya langsung soal kesehatan 😆.`,
+      },
+      {
+        id: 2,
+        badge: 'Dari Salad Buah ke Hati',
+        title: 'Bertukar Kontak Hingga Isi Hati',
+        text: `Dan dari kakak temanku itu rupanya memiliki adik ipar ( adik dari istrinya kakak temanku ) yang keliatannya masih single, berawal dari hanya diguyoni, lama-lama saya pun kepikiran iseng untuk pdkt, yang ternyata sudah pernah saya follow sebelumnya ketika melihat stori sang kakak di Instagram yang mengetag sang adik ipar @zuyyinaar03 , hingga pada malam pertemuan dimana saya sengaja memesan salad untuk malam hari kami tidak sengaja bertemu dan menyempatkan untuk mengobrol, bertukar kontak, dan hingga sampai kini bertukar isi hati 😍.`,
+      },
+      {
+        id: 3,
+        badge: 'Oktober 2024',
+        title: 'Perjalanan & Menyatukan Rasa',
+        text: `Namun perjalanan pun tak mudah, di tengah perkenalan rupanya sang adik masih bimbang dengan perasaannya dan saya pun pernah ditolak langsung 3 kali setelah sempat menyarakan perasaan saya, namun pada akhirnya di bulan Oktober 2024 ia pun menyatakan memiliki rasa sayang yang sama kepada saya.`,
+      },
+      {
+        id: 4,
+        badge: 'Oktober 2025 & 2026',
+        title: 'Lamaran & Ikrar Janji Suci',
+        text: `Hingga pada akhirnya di bulan Oktober 2025 kami pun melangsungkan proses lamaran untuk mengikat hubungan ini dengan lebih serius, dan berlanjut pula di bulan Oktober 2026 ini Alhamdulillah kami akan melangsungkan pernikahan dan prosesi janji suci cinta kami seumur hidup kami 🤍✨`,
+      },
+    ],
+  },
 
   dressCode: {
     message: 'Dengan hormat, kami mengundang Anda untuk mengenakan warna pilihan ini di hari pernikahan kami.',

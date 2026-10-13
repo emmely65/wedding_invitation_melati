@@ -6,6 +6,7 @@ import QuoteSection from './components/QuoteSection.jsx';
 import SaveTheDateSection from './components/SaveTheDateSection.jsx';
 import CoupleProfile from './components/CoupleProfile.jsx';
 import EventDetails from './components/EventDetails.jsx';
+import LoveStorySection from './components/LoveStorySection.jsx';
 import WeddingGift from './components/WeddingGift.jsx';
 import DoaPengantin from './components/DoaPengantin.jsx';
 import RSVPForm from './components/RSVPForm.jsx';
@@ -156,7 +157,10 @@ export default function App() {
             bouquetSrc={weddingData.photos.bouquet}
           />
 
-          {/* 6. Group Wedding Gift sampai RSVP */}
+          {/* 6. Our Love Story (Kisah Perjalanan Cinta) */}
+          <LoveStorySection data={weddingData} />
+
+          {/* 7. Group Wedding Gift sampai RSVP */}
           <div className="relative z-10 w-full">
             {/* Wedding Gift */}
             <WeddingGift data={weddingData} />

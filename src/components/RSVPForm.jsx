@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx';
 
 const GOOGLE_SHEETS_API_URL =
   import.meta.env.VITE_RSVP_API_URL ||
-  'https://script.google.com/macros/s/AKfycbxhqvpUEwbjioP-vaoRLtI3dSHO6suUfdAOG8x8ChgrtcFgShsJDZh2s5ZmnLXX1stDlA/exec';
+  'https://script.google.com/macros/s/AKfycbyJF4UNxOukUze5kMYQtnRnCKXXtp9JvaH4mRjKupMEanG3YXDBxSlcySQzhlbW-klZ4A/exec';
 
 const DEFAULT_WISHES = [
   {
